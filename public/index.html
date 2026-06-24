@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chitkara Full Stack Challenge</title>
+  <meta name="description" content="Single Express app that serves the BFHL API and a polished frontend." />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero card">
+      <div class="hero-topline">
+        <div class="eyebrow">Single Express app</div>
+        <div class="status-chip">Live API + frontend</div>
+      </div>
+
+      <h1>Chitkara Full Stack Engineering Challenge</h1>
+      <p class="subtitle">Paste node relationships, submit them to <strong>POST /bfhl</strong>, and inspect the hierarchy output in a cleaner, faster UI.</p>
+
+      <div class="sample-strip">
+        <span>Sample groups</span>
+        <span>A-&gt;B</span>
+        <span>A-&gt;C</span>
+        <span>X-&gt;Y</span>
+        <span>Z-&gt;X</span>
+      </div>
+
+      <div class="field-header">
+        <label for="nodeInput">Node list</label>
+        <span id="lineCount" class="field-count">0 lines</span>
+      </div>
+      <textarea id="nodeInput" rows="10" spellcheck="false" placeholder="A-&gt;B&#10;A-&gt;C&#10;B-&gt;D"></textarea>
+
+      <div class="button-row">
+        <button id="submitBtn">Submit</button>
+        <button id="sampleBtn" class="secondary">Load sample</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+
+      <div class="hint">One edge per line. Whitespace is trimmed before validation, and blank lines stay invalid.</div>
+
+      <div id="errorBox" class="error hidden"></div>
+    </section>
+
+    <section class="card response-card">
+      <div class="section-title-row">
+        <h2>Response</h2>
+        <span class="status-pill" id="statusPill">Idle</span>
+      </div>
+
+      <div id="responseBox" class="response-placeholder">
+        <div class="empty-state">
+          <div class="empty-kicker">Waiting for input</div>
+          <p>No response yet. Submit a node list to render the hierarchy, duplicate edges, invalid entries, and summary.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
